@@ -1,6 +1,6 @@
 {% load static %}
 {% load bootstrap4 %}
-
+{% csrf_token %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 
@@ -12,22 +12,34 @@
     <title>{{title}}</title>
 </head>
 <body>
-    <h1>{{message}}</h1>
-    <ul class="list-group">
-        {% for product in products %}
-        <li class="list-group-item">
-            {{product.title}}
-            {% if product.stock %}
-                <span class="text-success">Disponible</span>
-            {% else %}
-                <span class="text-danger">No Disponible</span>
-            {% endif %}
-        </li>
-        {% empty %}
-        <h3>no hay productos en la tienda esto esta pelado</h3>
-        {% endfor %}
-    </ul>
-    <img src="{% static 'img/mochilo.jpg' %}" alt="">
+    <div class="container">
+        {% if messages %}
+            {% for messages in messages %}
+            <div class="alert {% if messages.tags == 'success' %}alert-success{%else%}alert-danger{% endif%}">
+                <button type="button" class="close" data-dismiss="alert">X</button>
+                {{messages}}
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container">
+        <h1>{{message}}</h1>
+        <ul class="list-group">
+            {% for product in products %}
+            <li class="list-group-item">
+                {{product.title}}
+                {% if product.stock %}
+                    <span class="text-success">Disponible</span>
+                {% else %}
+                    <span class="text-danger">No Disponible</span>
+                {% endif %}
+            </li>
+            {% empty %}
+            <h3>no hay productos en la tienda esto esta pelado</h3>
+            {% endfor %}
+        </ul>
+        <img src="{% static 'img/mochilo.jpg' %}" alt="">
+    </div>
 </body>
 <script src="{% static 'js/main.js' %}"></script>
 </html>
