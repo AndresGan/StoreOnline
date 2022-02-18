@@ -1,16 +1,9 @@
+{% extends 'base/base.html' %}
 {% load static %}
-{% load bootstrap4 %}
-{% bootstrap_css %}
-{% bootstrap_javascript jquery='full'%}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+{% block title %}
+    login
+{% endblock title %}
+{% block content %}
     <div class="container">
         {% if messages %}
             {% for messages in messages %}
@@ -37,6 +30,4 @@
             </div>
         </div>
     </div>
-    
-</body>
-</html>
+    {% endblock content %}
