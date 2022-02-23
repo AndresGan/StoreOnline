@@ -6,15 +6,15 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navb" class="navbar-collapse hide">
-        {%if user.is_authenticated%}
-        <li class="navbar-item">
-            <a href="{% url 'logout'%}" class="nav-link">
-                <span class="fas fa-sign-out-alt"></span>
-                logout</a>
+        <ul class="nav navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <li class="navbar.item {% if request.path == logout%}active{% endif %}">
+                    <a href="{% url 'logout' %}" class="nav-link">
+                        <span class="fas fa-sing-out-alt"></span>
+                        Logout</a>
         </li>
 
         {% else %}
-        <ul class="nav navbar-nav ml-auto">
             <li class="navbar-item {% if request.path == login %} activate{% endif %}">
                 <a href="{{login}}" class="nav-link">
                     <span class="fas fa-user"></span>

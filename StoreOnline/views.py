@@ -20,8 +20,7 @@ def index(request):
             'message' : 'Listado de productos',
             'products' : products,
     }
-    return render(request, 'index.html',context)
-    
+    return render(request, 'index.html',context)   
     
 def login_view(request):
     if request.user.is_authenticated:
@@ -33,7 +32,7 @@ def login_view(request):
         if user:
             login(request, user)
             messages.success(request, 'Bienvido {}'.format(user.username))
-            return redirect('index')
+            return redirect('products:index')
         else:
             messages.error(request, 'Usuario o contraseña NO validos')
     return render(request, 'user/login.html', {})
@@ -52,7 +51,7 @@ def register(request):
         if user:
             login(request, user)
             messages.success(request,'Usuario creado de forma exitosa',)
-            return redirect('index')
+            return redirect('products:index')
     context = {
         'form' : form,
     }

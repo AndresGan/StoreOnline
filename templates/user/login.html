@@ -4,16 +4,6 @@
     login
 {% endblock title %}
 {% block content %}
-    <div class="container">
-        {% if messages %}
-            {% for messages in messages %}
-            <div class="alert {% if message.tags == 'success' %}alert-success{%else%}alert-danger{% endif%}">
-                <button type="button" class="close" data-dismiss="alert">X</button>
-                {{messages}}
-            </div>
-            {% endfor %}
-        {% endif %}
-        <div class="row">
             <div class="col">
                 <h1>Formulario Login</h1>
                 <form method="post">{% csrf_token %}

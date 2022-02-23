@@ -16,7 +16,8 @@ Including another URLconf
 from django.urls import include
 from django.contrib import admin
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static
 from StoreOnline import views
 
 urlpatterns = [
@@ -24,5 +25,8 @@ urlpatterns = [
     path('usuarios/logout', views.logout_view, name = 'logout'),
     path('usuarios/register', views.register, name = 'register'),
     path('admin/', admin.site.urls),
-    path('products/', include('products.urls', namespace='products'),)
+    path('products/', include('products.urls', namespace='products'),),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
