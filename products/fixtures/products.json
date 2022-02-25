@@ -1,0 +1,50 @@
+[
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "banano",
+        "description": "bananos",
+        "price": "1.00",
+        "slug": "banano",
+        "image": "products/Cavendish_Banana_DS_yv1B11R.jpg",
+        "created_at": "2022-02-23T23:13:54.575Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "mazamorra",
+        "description": "mazamorra",
+        "price": "1.00",
+        "slug": "mazamorra",
+        "image": "products/mazamorra.jpg",
+        "created_at": "2022-02-23T23:23:23.522Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "title": "Naranja",
+        "description": "Naranja",
+        "price": "3.00",
+        "slug": "naranja",
+        "image": "products/naranja_b3c2dbbc_1200x1200.jpg",
+        "created_at": "2022-02-25T18:22:00.339Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "title": "Repollo",
+        "description": "repollo",
+        "price": "1.00",
+        "slug": "repollo",
+        "image": "products/repollo_morado_1.jpg_1902800913.jpg",
+        "created_at": "2022-02-25T20:48:38.333Z"
+    }
+}
+]

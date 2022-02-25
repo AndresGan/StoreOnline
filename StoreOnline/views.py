@@ -8,9 +8,10 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from StoreOnline.forms import RegisterForm
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 import products
 from products.models import Product
+from users.models import User
 
 
 def index(request):
